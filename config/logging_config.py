@@ -19,8 +19,8 @@ LOGGING_CONFIG = {
             'format': '%(asctime)s [%(levelname)s] %(name)s [%(filename)s:%(lineno)d] %(funcName)s(): %(message)s',
             'datefmt': '%Y-%m-%d %H:%M:%S'
         },
-        'rag_format': {
-            'format': '%(asctime)s [%(levelname)s] RAG-%(name)s: %(message)s',
+        'embedding': {
+            'format': '%(asctime)s [%(levelname)s] EMBED-%(name)s: %(message)s',
             'datefmt': '%Y-%m-%d %H:%M:%S'
         }
     },
@@ -49,11 +49,11 @@ LOGGING_CONFIG = {
             'backupCount': 3,
             'encoding': 'utf-8'
         },
-        'rag_handler': {
+        'embed_handler': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'formatter': 'rag_format',
-            'filename': 'logs/rag.log',
+            'formatter': 'embedding',
+            'filename': 'logs/embedding_notebook.log',
             'maxBytes': 5242880,  # 5MB
             'backupCount': 3,
             'encoding': 'utf-8'
@@ -70,7 +70,7 @@ LOGGING_CONFIG = {
             'level': 'DEBUG',
             'propagate': False
         },
-        'rag': {
+        'embed_handler': {
             'handlers': ['console', 'file_handler', 'error_handler'],
             'level': 'INFO',
             'propagate': False
@@ -125,7 +125,7 @@ def get_logger(name):
     return logging.getLogger(name)
 
 # Convenience function for RAG components
-def get_rag_logger(module_name):
+def get_embed_logger(module_name):
     """
     Get a RAG-specific logger
     
@@ -135,4 +135,4 @@ def get_rag_logger(module_name):
     Returns:
         logging.Logger: RAG-specific logger
     """
-    return logging.getLogger(f"rag.{module_name}")
+    return logging.getLogger(f"embed.{module_name}")

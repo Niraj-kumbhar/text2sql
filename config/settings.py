@@ -9,8 +9,8 @@ load_dotenv()
 BASE_DIR = Path(__file__).parent.parent
 CONFIG_DIR = BASE_DIR / "config"
 LOGS_DIR = BASE_DIR / "logs"
-DATA_DIR = BASE_DIR / "data"
-DB_DIR = BASE_DIR / "vector_db"
+DATA_DIR = BASE_DIR / "data/input"
+VECTOR_DB_DIR = BASE_DIR / "vector_db/faiss"
 RAG_DIR = BASE_DIR / "rag"
 
 # Ensure directories exist
