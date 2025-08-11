@@ -13,12 +13,18 @@ dependencies = [
     "langchain-community (>=0.3.24,<0.4.0)",
     "unstructured[md] (>=0.17.2,<0.18.0)",
     "langchain-openai (>=0.3.18,<0.4.0)",
-    "chroma (>=0.2.0,<0.3.0)"
+    "mysql-connector-python (>=9.4.0,<10.0.0)",
+    "sqlalchemy (>=2.0.42,<3.0.0)",
+    "pymysql (>=1.1.1,<2.0.0)",
+    "faiss-cpu (>=1.11.0,<2.0.0)",
 ]
 
 [tool.poetry]
 package-mode = false
 
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.30.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
