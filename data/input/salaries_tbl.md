@@ -1,4 +1,4 @@
-## `salaries`
+## Table Name: `salaries`
 
 - **Description**: Details the salary history of each employee.
 - **Composite Primary Key**: `emp_no`, `from_date`

@@ -1,4 +1,4 @@
-## `employees`
+## Table Name: `employees`
 
 - **Description**: Contains personal information about each employee.
 - **Primary Key**: `emp_no`

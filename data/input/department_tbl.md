@@ -1,4 +1,4 @@
-## `departments`
+## Table Name: `departments`
 
 - **Description**: Lists all departments within the organization.
 - **Primary Key**: `dept_no`

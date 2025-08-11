@@ -1,4 +1,4 @@
-## `dept_emp`
+## Table Name: `dept_emp`
 
 - **Description**: Associates employees with the departments they have worked in, including the duration.
 - **Composite Primary Key**: `emp_no`, `dept_no`, `from_date`
