@@ -12,6 +12,8 @@ LOGS_DIR = BASE_DIR / "logs"
 DATA_DIR = BASE_DIR / "data/input"
 VECTOR_DB_DIR = BASE_DIR / "vector_db/faiss"
 RAG_DIR = BASE_DIR / "rag"
+TEST_OUTPUT_DIR = BASE_DIR/"tests/dummy_outputs"
+
 
 # Ensure directories exist
 LOGS_DIR.mkdir(exist_ok=True)
