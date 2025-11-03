@@ -1,0 +1,27 @@
+{
+  "sql_query": "SELECT COUNT(*) AS current_employees FROM employees e JOIN dept_emp de ON e.emp_no = de.emp_no WHERE de.to_date = '9999-01-01';",
+  "explanation": "The query joins the 'employees' and 'dept_emp' tables on 'emp_no' to find employees. It filters for records where 'to_date' is '9999-01-01', which indicates employees currently working in the company, then counts these employees.",
+  "metadata": {
+    "token_usage": {
+      "completion_tokens": 101,
+      "prompt_tokens": 531,
+      "total_tokens": 632,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cached_tokens": 0
+      }
+    },
+    "model_name": "gpt-4.1-nano-2025-04-14",
+    "system_fingerprint": "fp_c4c155951e",
+    "id": "chatcmpl-C6e1SaTcXm6JaeLxqxU9mx5fbjwUs",
+    "service_tier": "default",
+    "finish_reason": "stop",
+    "logprobs": null
+  }
+}

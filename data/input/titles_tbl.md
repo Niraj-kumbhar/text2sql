@@ -1,4 +1,4 @@
-## `titles`
+## Table Name: `titles`
 
 - **Description**: Tracks the job titles held by employees over time.
 - **Composite Primary Key**: `emp_no`, `from_date`

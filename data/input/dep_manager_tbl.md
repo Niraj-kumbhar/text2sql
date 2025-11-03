@@ -1,4 +1,4 @@
-## `dept_manager`
+## Table Name: `dept_manager`
 
 - **Description**: Records the managerial assignments of employees to departments.
 - **Composite Primary Key**: `dept_no`, `emp_no`, `from_date`
