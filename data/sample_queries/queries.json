@@ -1,0 +1,30 @@
+[
+  {
+    "question": "List the top 10 highest paid employees (current salaries).",
+    "sql": "SELECT e.emp_no, e.first_name, e.last_name, s.salary\nFROM employees e\nJOIN salaries s ON e.emp_no = s.emp_no\nWHERE s.to_date = '9999-01-01'   -- current salary\nORDER BY s.salary DESC\nLIMIT 10;"
+  },
+  {
+    "question": "Find the number of employees per department.",
+    "sql": "SELECT d.dept_name, COUNT(de.emp_no) AS employee_count\nFROM departments d\nJOIN dept_emp de ON d.dept_no = de.dept_no\nWHERE de.to_date = '9999-01-01'\nGROUP BY d.dept_name\nORDER BY employee_count DESC;"
+  },
+  {
+    "question": "Get the list of department managers and their departments.",
+    "sql": "SELECT \n    d.dept_name, \n    e.first_name, \n    e.last_name\nFROM dept_manager dm\nJOIN departments d ON dm.dept_no = d.dept_no\nJOIN employees e ON dm.emp_no = e.emp_no\nWHERE dm.to_date = '9999-01-01';"
+  },
+  {
+    "question": "Find employees who have changed titles more than once.",
+    "sql": "SELECT emp_no, COUNT(*) AS title_changes\nFROM titles\nGROUP BY emp_no\nHAVING COUNT(*) > 1;"
+  },
+  {
+    "question": "Get the average salary by department.",
+    "sql": "SELECT d.dept_name, AVG(s.salary) AS avg_salary\nFROM departments d\nJOIN dept_emp de ON d.dept_no = de.dept_no\nJOIN salaries s ON de.emp_no = s.emp_no\nWHERE de.to_date = '9999-01-01' AND s.to_date = '9999-01-01'\nGROUP BY d.dept_name\nORDER BY avg_salary DESC;"
+  },
+  {
+    "question": "Find the most recently hired employees.",
+    "sql": "SELECT emp_no, first_name, last_name, hire_date\nFROM employees\nORDER BY hire_date DESC\nLIMIT 10;"
+  },
+  {
+    "question": "Find employees whose salary is above the company average.",
+    "sql": "SELECT e.emp_no, e.first_name, e.last_name, s.salary\nFROM employees e\nJOIN salaries s ON e.emp_no = s.emp_no\nWHERE s.to_date = '9999-01-01'\n  AND s.salary > (SELECT AVG(salary) FROM salaries WHERE to_date = '9999-01-01');"
+  }
+]
