@@ -6,13 +6,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Base paths
-BASE_DIR = Path(__file__).parent.parent
-CONFIG_DIR = BASE_DIR / "config"
-LOGS_DIR = BASE_DIR / "logs"
-DATA_DIR = BASE_DIR / "data/input"
-VECTOR_DB_DIR = BASE_DIR / "vector_db/faiss"
-RAG_DIR = BASE_DIR / "rag"
-TEST_OUTPUT_DIR = BASE_DIR/"tests/dummy_outputs"
+_BASE_DIR = Path(__file__).parent.parent
+CONFIG_DIR = _BASE_DIR / "config"
+LOGS_DIR = _BASE_DIR / "logs"
+INPUT_DATA_TABLES_DIR = _BASE_DIR / "data/tables"
+INPUT_DATA_SAMPLE_DIR = _BASE_DIR / "data/sample_queries"
+VECTOR_DB_DIR_TABLES = _BASE_DIR / "vector_db/TABLES"
+VECTOR_DB_DIR_SAMPLEQ = _BASE_DIR / "vector_db/SAMPLEQ_DB"
+RAG_DIR = _BASE_DIR / "rag"
+TEST_OUTPUT_DIR = _BASE_DIR/"tests/dummy_outputs"
 
 
 # Ensure directories exist
