@@ -2,7 +2,7 @@
 
 A powerful Streamlit-based AI Agent that allows users to explore and query SQL databases using natural language. Built with LangChain, LangGraph, and OpenAI.
 
-![Architecture](./img/SQL-AgentPlan1.png)
+![Architecture](./img/demo.gif)
 
 ## ✨ Features
 
