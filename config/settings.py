@@ -1,11 +1,22 @@
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+import yaml
 
-# Load environment variables
+def load_yaml():
+    yaml_path = Path("config/config.yml")
+
+    if not yaml_path.exists():
+        raise FileNotFoundError(f"YAML file not found: {yaml_path.resolve()}")
+
+    with yaml_path.open("r", encoding="utf-8") as f:
+        config = yaml.safe_load(f)
+    return config
+
 load_dotenv()
+_config = load_yaml()
 
-# Base paths
+
 _BASE_DIR = Path(__file__).parent.parent
 CONFIG_DIR = _BASE_DIR / "config"
 LOGS_DIR = _BASE_DIR / "logs"
@@ -13,6 +24,7 @@ INPUT_DATA_TABLES_DIR = _BASE_DIR / "data/tables"
 INPUT_DATA_SAMPLE_DIR = _BASE_DIR / "data/sample_queries"
 VECTOR_DB_DIR_TABLES = _BASE_DIR / "vector_db/TABLES"
 VECTOR_DB_DIR_SAMPLEQ = _BASE_DIR / "vector_db/SAMPLEQ_DB"
+VECTOR_DB_COMBINE = _BASE_DIR / "vector_db/COMBINED_DB"
 RAG_DIR = _BASE_DIR / "rag"
 TEST_OUTPUT_DIR = _BASE_DIR/"tests/dummy_outputs"
 
@@ -38,3 +50,5 @@ COLLECTION_NAME = "mysql_employees_tables"
 
 # LLM
 MODEL = 'gpt-4.1-nano-2025-04-14'
+
+SYSTEM_PROMPT = _config.get('prompts').get('system_prompt')
